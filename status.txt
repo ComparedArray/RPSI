@@ -5,6 +5,6 @@ class b
 {
 public static void Main()
 {
-MessageBox.Show("Welp, Fun Fun! Eeeks.");
+MessageBox.Show("I am in constant Pain! Yeehaw!");
 }
 }
