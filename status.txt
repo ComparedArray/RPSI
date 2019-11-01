@@ -5,6 +5,6 @@ class b
 {
 public static void Main()
 {
-MessageBox.Show("Your word is: Boom. :)");
+MessageBox.Show("Welp, Fun Fun! Eeeks.");
 }
 }
