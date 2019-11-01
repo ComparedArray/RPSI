@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/1/2019 11:57:06 AM
+//EXEC_CODE -- Exception Modifier.  :)
+using System;
+using System.Windows.Forms;
+class be
+{
+public static void Main()
+{
+MessageBox.Show("You have the autism.");
+}
+}
