@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/1/2019 5:05:16 PM
+//EXEC_CODE -- Exception Modifier.  
+using System;
+using System.Windows.Forms;
+class b
+{
+public static void Main()
+{
+MessageBox.Show("ur so epic have some choco milk");
+}
+}
