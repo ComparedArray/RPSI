@@ -1,10 +1,1 @@
-//EXEC_CODE
-using System;
-using System.Windows.Forms;
-class b
-{
-public static void Main()
-{
-MessageBox.Show("0w0 bulgey wulgey 0w0");
-}
-}
+CRISIS_FALSE 11/1/2019 6:09:19 PM
