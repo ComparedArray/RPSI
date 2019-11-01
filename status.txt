@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/1/2019 6:10:58 PM
+//EXEC_CODE
+using System;
+using System.Windows.Forms;
+class b
+{
+public static void Main()
+{
+MessageBox.Show("my pp needs a succ succ but its no nut november");
+}
+}
