@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/1/2019 6:08:50 PM
+//EXEC_CODE
+using System;
+using System.Windows.Forms;
+class b
+{
+public static void Main()
+{
+MessageBox.Show("0w0 bulgey wulgey 0w0");
+}
+}
