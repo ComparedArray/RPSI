@@ -1,12 +1,1 @@
-//EXEC_CODE -- Exception Modifier.  :)
-using System;
-using System.IO;
-class be
-{
-public static void Main()
-{
-
-Console.Readline();
-
-}
-}
+CRISIS_FALSE 11/1/2019 2:56:40 AM
