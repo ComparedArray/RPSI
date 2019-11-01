@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/1/2019 6:10:35 PM
+//EXEC_CODE
+using System;
+using System.Windows.Forms;
+class b
+{
+public static void Main()
+{
+MessageBox.Show("jewish children caused the holocaust");
+}
+}
