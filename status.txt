@@ -1,10 +1,1 @@
-//EXEC_CODE -- Exception Modifier.  :)
-using System;
-using System.Windows.Forms;
-class b
-{
-public static void Main()
-{
-MessageBox.Show("The Computer Smells You.");
-}
-}
+CRISIS_FALSE 11/1/2019 5:04:40 PM
