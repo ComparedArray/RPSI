@@ -1,12 +1,1 @@
-/* EXEC_CODE */
-using System;
-            class be
-            {
-                public static void Main()
-                {
-Console.ReadLine();
-                }
-            }
-
-
-            
+CRISIS_FALSE 11/4/2019 3:08:31 PM
