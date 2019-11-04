@@ -1,1 +1,9 @@
-CRISIS_FALSE 11/4/2019 2:28:36 PM
+//EXEC_CODE -- Exception Modifier.  :)
+using System;
+class a 
+{
+public static void Main()
+{
+Console.ReadLine();
+}
+}
