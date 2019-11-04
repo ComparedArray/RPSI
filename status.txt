@@ -1,1 +1,12 @@
-CRISIS_FALSE 11/4/2019 3:15:25 PM
+/* EXEC_CODE */
+using System;
+            class be
+            {
+                public static void Main()
+                {
+Console.ReadLine();
+                }
+            }
+
+
+            
