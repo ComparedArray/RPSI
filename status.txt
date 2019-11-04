@@ -1,1 +1,1 @@
-CRISIS_FALSE 11/4/2019 2:51:27 PM
+/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show('Hi!');}}
