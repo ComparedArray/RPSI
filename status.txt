@@ -1,16 +1,10 @@
-/* EXEC_CODE */
+//EXEC_CODE -- Exception Modifier.  :)
 using System;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-            class be
-            {
-        [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-                public static void Main()
-                {
-LockWorkStation();
-                }
-            }
-
-
-             /* 336365 */
+class b
+{
+public static void Main()
+{
+MessageBox.Show("Hi Teehee!");
+}
+}
