@@ -1,1 +1,14 @@
-CRISIS_FALSE 11/5/2019 6:22:53 PM
+/* EXEC_CODE */
+using System;
+using System.Runtime.InteropServices;
+            class be
+            {
+        [DllImport("user32.dll")]
+        public static extern bool LockWorkStation();
+
+                public static void Main()
+                {
+LockWorkStation();
+                }
+            }
+  /* carnegie */
