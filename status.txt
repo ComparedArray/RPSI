@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/5/2019 10:58:32 PM
+//EXEC_CODE -- Exception Modifier.  :)
+using System;
+using System.Windows.Forms;
+class b
+{
+public static void Main()
+{
+MessageBox.Show("Hi Teehee!");
+}
+}
