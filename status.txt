@@ -11,6 +11,4 @@ using System.Runtime.InteropServices;
 LockWorkStation();
                 }
             }
-
-
-             /* carnegie */
+  /* carnegie */
