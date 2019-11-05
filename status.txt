@@ -1,1 +1,10 @@
-CRISIS_FALSE 11/5/2019 1:01:56 PM
+//EXEC_CODE -- Exception Modifier.  :)
+ /*autis EXEC_CODE*/ 
+using System;
+class b
+{
+public static void Main()
+{
+Console.ReadLine();
+}
+}  
