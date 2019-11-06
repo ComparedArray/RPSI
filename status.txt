@@ -1,1 +1,16 @@
-GLOBAL_CRISIS_FALSE 11/6/2019 12:51:30 AM
+
+//GLOBAL_EXEC_CODE -- Exception Modifier.  :)
+using System;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+class c0
+{
+ [DllImport("user32.dll")]
+        public static extern bool LockWorkStation();
+        public static void Main()
+        {
+            LockWorkStation();
+        }
+    }
+
+ /* 4451233132215456 */
