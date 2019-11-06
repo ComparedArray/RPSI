@@ -1,4 +1,3 @@
-
 //EXEC_CODE -- Exception Modifier.  :)
 using System;
 using System.Windows.Forms;
@@ -13,4 +12,4 @@ class c0
         }
     }
 
-   /* dad112325623 */
+   /* 22131 */
