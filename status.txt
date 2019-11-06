@@ -1,16 +1,1 @@
-
-//EXEC_CODE -- Exception Modifier.  :)
-using System;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-class c0
-{
- [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-        public static void Main()
-        {
-            MessageBox.Show("hey do you see this? k cool kid");
-        }
-    }
-
-   /* 9978admin */
+GLOBAL_CRISIS_FALSE 11/6/2019 6:46:59 PM
