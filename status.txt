@@ -9,8 +9,8 @@ class c0
         public static extern bool LockWorkStation();
         public static void Main()
         {
-            MessageBox.Show("Hi!");
+            MessageBox.Show("Hi!1");
         }
     }
 
- /* 445lok */
+ 
