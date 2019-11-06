@@ -1,4 +1,5 @@
-//EXEC_CODE -- Exception Modifier.  :)
+
+//GLOBAL_EXEC_CODE -- Exception Modifier.  :)
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -12,4 +13,4 @@ class c0
         }
     }
 
-   /* 22131 */
+ /* 12131 */
