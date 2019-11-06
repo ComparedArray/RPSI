@@ -1,1 +1,13 @@
-/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}}   /* 112125362 */
+//GLOBAL_EXEC_CODE -- Exception Modifier.  :)
+using System;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+class c0
+{
+ [DllImport("user32.dll")]
+        public static extern bool LockWorkStation();
+public static void Main()
+{
+LockWorkStation();
+}
+}
