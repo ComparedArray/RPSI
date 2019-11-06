@@ -1,1 +1,2 @@
-GLOBAL_CRISIS_FALSE 11/6/2019 1:47:21 PM
+/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Did you know that the jews caused the Holocaust?");}}
+ /* 44542school */
