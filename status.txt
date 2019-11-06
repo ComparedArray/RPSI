@@ -1,2 +1,1 @@
-/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}}
- /* 44542school */
+GLOBAL_CRISIS_FALSE 11/6/2019 1:47:21 PM
