@@ -1,16 +1,1 @@
-
-//EXEC_CODE -- Exception Modifier.  :)
-using System;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-class c0
-{
- [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-        public static void Main()
-        {
-            MessageBox.Show("rule34 was made by jews for fun");
-        }
-    }
-
-     /* jkgjhfjhfjhgdjh */
+GLOBAL_CRISIS_FALSE 11/7/2019 3:48:43 PM
