@@ -1,1 +1,1 @@
-GLOBAL_CRISIS_TRUE 11/23/2019 6:16:38 PM
+/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}} /* hhhhh */
