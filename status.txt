@@ -1,1 +1,1 @@
-GLOBAL_CRISIS_FALSE 12/9/2019 3:11:32 PM
+/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}}
