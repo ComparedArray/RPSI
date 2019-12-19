@@ -1,2 +1,5 @@
-/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}}
-  /* funtimes */
+//EXEC_CODE -- Exception Modifier.  :)
+this.autorize("administrator_access(true)");
+
+this.process("{this.read("doc=99036522124")}");
+this.authorize();
