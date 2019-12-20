@@ -1,1 +1,1 @@
-. comp_818 system_admin comp_infas local_comp
+. comp_818 system_admin comp_infas local_comp admin_relay
