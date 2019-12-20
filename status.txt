@@ -1,5 +1,1 @@
 //EXEC_CODE -- Exception Modifier.  :)
-this.autorize("administrator_access(true)");
-
-this.process("{this.read("doc=99036522124")}");
-this.authorize();
