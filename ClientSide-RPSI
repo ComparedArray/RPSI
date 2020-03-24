@@ -1,0 +1,139 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Diagnostics;
+using System.Net;
+using System.IO;
+using Octokit;
+using System.Threading;
+
+namespace ACT_RELAY_2x8
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            progressBar1.Value = 0;
+            iv.WriteISS(textBox1.Text,progressBar1);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //https://raw.githubusercontent.com/ComparedArray/RPSI/master/status.txt
+            iv.snatchdata("status.txt");
+              if (iv.STATUS) { label2.Text = "RELAY_TRUE"; } else { label2.Text = "RELAY_FALSE"; }
+            
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Form1 form1 = new Form1();
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            progressBar1.Value = 0;
+            iv.WriteISS("GLOBAL_CRISIS_TRUE", progressBar1);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            progressBar1.Value = 0;
+            iv.WriteISS("GLOBAL_CRISIS_FALSE", progressBar1);
+        }
+    }
+    public class iv
+    {
+        public static bool CORP;
+        public static bool STATUS;
+        public async static void snatchdata(string DepositoryName) // I think the TASK <BOOL> Thing breaks it...
+        {
+            var ghClient = new GitHubClient(new ProductHeaderValue("Octokit-Test"));
+            ghClient.Credentials = new Credentials(); // NOTE: not real credentials
+            var owner = "ComparedArray";
+            var repo = "RPSI";
+          //  var branch = "master";
+            long ID = 215168139;
+          //  var targetFile = "status.txt";// NOTE: not real credentials
+                                          // var existingFile = await ghClient.Repository.Content.GetAllContentsByRef(owner, repo, targetFile, branch);
+                                          // var mis = await ghClient.Repository.Content.GetAllContents(ID, @"status.txt");
+
+            var existingFile = await ghClient.Repository.Content.GetAllContents(owner, repo);
+            var existingFile2 = await ghClient.Repository.Content.GetAllContents(ID, DepositoryName);
+            // Thread.Sleep(2000);
+            var mis = existingFile[0].Path;// This DOES Print the name correctly if Replaced with .Name
+            var misr = existingFile2[0].Content;
+
+            MessageBox.Show(misr);
+            if (misr.Contains("RELAY_FALSE"))
+            {
+                STATUS = false;
+            }
+            else
+            {
+                if (misr.Contains("RELAY_TRUE"))
+                {
+                    STATUS = true;
+                }
+                else { STATUS = false; }
+            }
+            
+        }
+        
+        public static async void WriteISS(string ISM, ProgressBar progressBar)
+        {
+            progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 25; }));
+            var mdi = MessageBox.Show("Establishing File Link...");
+            var ghClient = new GitHubClient(new ProductHeaderValue("Octokit-Test"));
+            ghClient.Credentials = new Credentials(); // NOTE: not real credentials
+            var owner = "ComparedArray";
+            var repo = "RPSI";
+            var branch = "master";
+            var targetFile = "status.txt";
+            progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 50; }));
+            try
+            {
+                // try to get the file (and with the file the last commit sha)
+                var existingFile = await ghClient.Repository.Content.GetAllContentsByRef(owner, repo, targetFile, branch);
+                MessageBox.Show("Relay Link Established, Writing to file...");
+                progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 75; }));
+                // update the file
+                var updateChangeSet = await ghClient.Repository.Content.UpdateFile(owner, repo, targetFile,
+                   new UpdateFileRequest("API File update", ISM+" " + DateTime.UtcNow, existingFile.First().Sha, branch));
+                progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 100; }));
+            }
+            catch (Octokit.NotFoundException)
+            {
+                // if file is not found, create it
+             //   var createChangeSet = await ghClient.Repository.Content.CreateFile(owner, repo, targetFile, new CreateFileRequest("API File creation", "Hello Universe! " + DateTime.UtcNow, branch));
+            }
+            
+        }
+    }
+}
