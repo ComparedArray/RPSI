@@ -1,0 +1,207 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
+using System.IO;
+using Octokit;
+using System.Threading;
+
+namespace ACT_RELAY_2x8
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+            treeView1.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(treeView1_NodeMouseDoubleClick);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //CSharpCodeProvider cSharp = new CSharpCodeProvider();
+
+            //string exePath = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
+            iv2.WriteISS(textBox1.Text,"status.txt", progressBar1);
+
+
+        }
+
+
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            progressBar1.Value = 0;
+            iv.WriteISS("GLOBAL_CRISIS_FALSE",progressBar1);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show(\"Hi!\");}}";
+                
+                
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = @"/* EXEC_CODE */
+            class be
+            {
+                public static void Main()
+                {
+                }
+            }
+
+
+            ";
+        }
+
+
+        void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            var c = e.Node.Name;
+            var b = textBox1.Text;
+            textBox1.Text = b + @" /* " + treeView1.SelectedNode.Text + @" */";
+        }// ---RELAY PERSONALIZED CONSTRUCTOR & INPUT RETILA.
+
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            iv2.WriteISS(".", "namestore.txt",progressBar1);
+            var nodes = treeView1.Nodes;
+            try
+            {
+                foreach (TreeNode node in nodes)
+                {
+                    node.Remove();
+                }
+            }
+            catch(Exception ess)
+            {
+                Console.WriteLine(ess);
+            }
+        }
+
+        private async void button8_Click(object sender, EventArgs e)
+        {
+            await iv2.snatchdata("namestore.txt");
+        //TRO:
+            Thread.Sleep(100);
+                string[] words = iv2.Result.Split(new char[] { ' ' });
+            words[0] = "Global Relay";
+            treeView1.BeginUpdate();
+            foreach (string c in words)
+            {
+                Console.WriteLine(c);
+
+                TreeNode node = treeView1.Nodes.Add(c);
+
+                node.Nodes.Add("Detected Function");
+                
+            }
+            treeView1.EndUpdate();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var ms = @"
+//GLOBAL_EXEC_CODE -- Exception Modifier.  :)
+using System;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+class c0
+{
+ [DllImport(""user32.dll"")]
+        public static extern bool LockWorkStation();
+        public static void Main()
+        {
+            LockWorkStation();
+        }
+    }
+
+";
+            textBox1.Text = ms;
+        }
+    }
+    public class iv2
+    {
+        public static bool CORP;
+        public static bool STATUS;
+        public static string Result;
+        public static bool Phandle;
+        public async static Task<string> snatchdata(string DepositoryName) // I think the TASK <BOOL> Thing breaks it...
+        {
+            var ghClient = new GitHubClient(new ProductHeaderValue("Octokit-Test"));
+            ghClient.Credentials = new Credentials(); // NOTE: not real credentials
+            var owner = "ComparedArray";
+            var repo = "RPSI";
+            //  var branch = "master";
+            long ID = 215168139;
+            //  var targetFile = "status.txt";// NOTE: not real credentials
+            // var existingFile = await ghClient.Repository.Content.GetAllContentsByRef(owner, repo, targetFile, branch);
+            // var mis = await ghClient.Repository.Content.GetAllContents(ID, @"status.txt");
+
+            var existingFile = await ghClient.Repository.Content.GetAllContents(owner, repo);
+            var existingFile2 = await ghClient.Repository.Content.GetAllContents(ID, DepositoryName);
+            // Thread.Sleep(2000);
+            var mis = existingFile[0].Path;// This DOES Print the name correctly if Replaced with .Name
+            var misr = existingFile2[0].Content;
+            //Console.WriteLine(misr);
+
+            iv2.Result = misr;
+            return misr;
+
+        }
+        public static async void WriteISS(string ISM,string name,ProgressBar progressBar)
+        {
+            progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 25; }));
+            var mdi = MessageBox.Show("Establishing File Link...");
+            var ghClient = new GitHubClient(new ProductHeaderValue("Octokit-Test"));
+            ghClient.Credentials = new Credentials(); // NOTE: not real credentials
+            var owner = "ComparedArray";
+            var repo = "RPSI";
+            var branch = "master";
+            var targetFile = name;
+            progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 50; }));
+            try
+            {
+                // try to get the file (and with the file the last commit sha)
+                var existingFile = await ghClient.Repository.Content.GetAllContentsByRef(owner, repo, targetFile, branch);
+                MessageBox.Show("Relay Link Established, Writing to file...");
+                progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 75; }));
+                // update the file
+                var updateChangeSet = await ghClient.Repository.Content.UpdateFile(owner, repo, targetFile,
+                   new UpdateFileRequest("API File update", ISM + "" /**+ DateTime.UtcNow**/, existingFile.First().Sha, branch));
+                progressBar.Invoke(new MethodInvoker(delegate { progressBar.Value = 100; }));
+            }
+            catch (Octokit.NotFoundException)
+            {
+                // if file is not found, create it
+                //   var createChangeSet = await ghClient.Repository.Content.CreateFile(owner, repo, targetFile, new CreateFileRequest("API File creation", "Hello Universe! " + DateTime.UtcNow, branch));
+            }
+
+        }
+    }
+}
