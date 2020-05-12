@@ -1,15 +1,1 @@
-
-//GLOBAL_EXEC_CODE -- Exception Modifier.  :)
-using System;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-class c0
-{
- [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-        public static void Main()
-        {
-            LockWorkStation();
-        }
-    }
-
+GLOBAL_CRISIS_FALSE 5/12/2020 3:03:31 AM
