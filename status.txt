@@ -1,5 +1,5 @@
 
-//GLOBAL_EXEC_CODE -- Exception Modifier.  :)
+//GLOBAL_EXEC_CODE 
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
