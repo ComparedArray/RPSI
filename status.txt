@@ -1,16 +1,1 @@
-
-//GLOBAL_EXEC_CODE 
-using System;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-class c0
-{
- [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-        public static void Main()
-        {
-            LockWorkStation();
-        }
-    }
-
- /* Branden-PC */
+GLOBAL_CRISIS_FALSE 5/12/2020 5:22:24 PM
