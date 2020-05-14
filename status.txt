@@ -1,4 +1,4 @@
-/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}} 
+/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Pong!");}} 
 
 
 /* Branden-PC */
