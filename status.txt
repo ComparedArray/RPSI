@@ -1,1 +1,4 @@
-GLOBAL_CRISIS_FALSE 5/14/2020 9:10:47 PM
+/* EXEC_CODE */ using System.Windows.Forms; class b{public static void Main(){MessageBox.Show("Hi!");}} 
+
+
+/* Branden-PC */
